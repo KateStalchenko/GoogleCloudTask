@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk
       
-    working_directory: ~/GoogleCloudTask 
+    working_directory: ~/GoogleCloudTask/src/test/java 
 
     steps: 
 
@@ -12,7 +12,7 @@ jobs:
       
       - run: mvn dependency:go-offline 
       
-      - run: mvn package
+      - run: mvn test -Dtest=tstGoogleCloudForm
       
       - store_test_results: 
           path: target/surefire-reports
