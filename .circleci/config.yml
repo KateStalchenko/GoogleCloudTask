@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    
+    working_directory: ~/circleci-demo-java-spring 
+
+    steps: 
+
+      - checkout 
+      
+      - run: mvn dependency:go-offline 
+      
+      - run: mvn package
+      
+      - store_test_results: 
+          path: target/surefire-reports
