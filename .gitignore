@@ -1,0 +1,8 @@
+/.allure
+/.idea
+/.gradle
+/allure-results
+/build
+/out
+*.iml
+*.log
