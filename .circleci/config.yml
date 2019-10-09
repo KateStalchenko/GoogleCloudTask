@@ -12,7 +12,7 @@ jobs:
       
       - run: mvn dependency:go-offline 
       
-      - run: mvn test -Dtest=tst*
+      - run: mvn test -Dtest=tst* -Dbrowser=${BROWSER}
       
       - store_test_results: 
           path: target/surefire-reports
