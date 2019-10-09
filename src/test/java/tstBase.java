@@ -9,8 +9,6 @@ import org.testng.annotations.BeforeClass;
 public class tstBase {
     Pages pages = new Pages();
     WebDriver driver;
-    EstimateForm estimateForm = new EstimateForm();
-    GoogleCloudCalculatorForm googleCloudCalculatorForm = new GoogleCloudCalculatorForm();
 
     @BeforeClass
     public void beforeClass() {
