@@ -1,15 +1,10 @@
-workflows:
-  version: 2
-  nightly:
-    triggers:
-      - schedule:
-          cron: "0 * * * *"
-          filters:
-            branches:
-              only:
-                - master
-    jobs:
-      build:
+version: 2.1
+
+orbs:
+  win: circleci/windows@2.2.0
+
+jobs:
+  test_job:
         docker:
           - image: circleci/openjdk:8-jdk-browsers
       
@@ -25,3 +20,19 @@ workflows:
       
           - store_test_results: 
               path: target/surefire-reports
+
+workflows:
+  version: 2
+  nightly:
+    triggers:
+      - schedule:
+          cron: "25 * * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - test_job
+  build-test:
+    jobs:
+      - test_job
