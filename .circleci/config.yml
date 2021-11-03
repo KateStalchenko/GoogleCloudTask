@@ -8,20 +8,20 @@ workflows:
             branches:
               only:
                 - master
-  jobs:
-    build:
-      docker:
-        - image: circleci/openjdk:8-jdk-browsers
+    jobs:
+      build:
+        docker:
+          - image: circleci/openjdk:8-jdk-browsers
       
-      working_directory: ~/GoogleCloudTask/src/test/java 
+        working_directory: ~/GoogleCloudTask/src/test/java 
 
-      steps: 
+        steps: 
 
-        - checkout 
+          - checkout 
       
-        - run: mvn dependency:go-offline 
+          - run: mvn dependency:go-offline 
       
-        - run: mvn test -Dtest=tst* -Dbrowser=${BROWSER}
+          - run: mvn test -Dtest=tst* -Dbrowser=${BROWSER}
       
-        - store_test_results: 
-            path: target/surefire-reports
+          - store_test_results: 
+              path: target/surefire-reports
