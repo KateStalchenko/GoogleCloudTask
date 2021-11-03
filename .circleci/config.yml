@@ -2,7 +2,7 @@ version: 2
 nightly:
     triggers:
       - schedule:
-          cron: "*/5 * * * *"
+          cron: "50 * * * *"
 jobs:
   build:
     docker:
