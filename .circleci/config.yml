@@ -2,7 +2,11 @@ version: 2
 nightly:
     triggers:
       - schedule:
-          cron: "50 * * * *"
+          cron: "0 * * * *"
+            filters:
+            branches:
+              only:
+                - master
 jobs:
   build:
     docker:
