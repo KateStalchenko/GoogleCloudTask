@@ -26,13 +26,3 @@ workflows:
   build-test:
    jobs:
       - test_job
-  auto-run:
-   triggers:
-      - schedule:
-          cron: "37 * * * *"
-          filters:
-            branches:
-              only:
-                - master
-   jobs:
-      - test_job
