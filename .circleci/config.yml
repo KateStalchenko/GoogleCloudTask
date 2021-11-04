@@ -24,5 +24,12 @@ jobs:
 workflows:
   version: 2
   build-test:
+  triggers:
+      - schedule:
+          cron: "30 * * * *"
+          filters:
+            branches:
+              only:
+                - master
     jobs:
       - test_job
